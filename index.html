@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>캐릭터 AR</title>
+    
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+    
+    <style>
+      body { margin: 0; padding: 0; background-color: #f0f0f0; }
+      model-viewer { width: 100vw; height: 100vh; }
+      .ar-button {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 12px 24px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 8px;
+        background-color: #ffffff;
+        border: none;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+      }
+    </style>
+  </head>
+  <body>
+    
+    <model-viewer 
+      src="Cupcake_V05.glb" 
+      ios-src="Cupcake_V05.usdz" 
+      ar 
+      ar-modes="webxr scene-viewer quick-look" 
+      camera-controls>
+      
+      <button slot="ar-button" class="ar-button">
+        AR로 보기
+      </button>
+
+    </model-viewer>
+
+  </body>
+</html>
