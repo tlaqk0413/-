@@ -7,8 +7,8 @@
     <style>
       body { margin: 0; padding: 0; background-color: #f0f0f0; }
       model-viewer { width: 100vw; height: 100vh; }
-      /* 버튼이 절대 사라지지 않도록 가장 위에 고정하는 디자인 */
-      .force-ar-button {
+      /* 버튼이 절대 사라지지 않도록 가장 위에 고정하고, 디자인을 부드럽고 파랗게 변경 */
+      .friendly-ar-button {
         position: absolute;
         bottom: 40px;
         left: 50%;
@@ -17,10 +17,11 @@
         font-size: 18px;
         font-weight: bold;
         border-radius: 12px;
-        background-color: #ff3b30;
+        /* 친근한 파란색 톤으로 변경 */
+        background-color: #337ab7; 
         color: white;
         border: none;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
         z-index: 9999; 
         cursor: pointer;
       }
@@ -38,8 +39,8 @@
       camera-controls>
     </model-viewer>
 
-    <button class="force-ar-button" onclick="document.querySelector('#my-model').activateAR()">
-      강제 AR 실행
+    <button class="friendly-ar-button" onclick="document.querySelector('#my-model').activateAR()">
+      AR로 뿅
     </button>
 
   </body>
