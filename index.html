@@ -7,36 +7,40 @@
     <style>
       body { margin: 0; padding: 0; background-color: #f0f0f0; }
       model-viewer { width: 100vw; height: 100vh; }
-      .ar-button {
+      /* 버튼이 절대 사라지지 않도록 가장 위에 고정하는 디자인 */
+      .force-ar-button {
         position: absolute;
-        bottom: 30px;
+        bottom: 40px;
         left: 50%;
         transform: translateX(-50%);
-        padding: 12px 24px;
-        font-size: 16px;
+        padding: 16px 32px;
+        font-size: 18px;
         font-weight: bold;
-        border-radius: 8px;
-        background-color: #ffffff;
+        border-radius: 12px;
+        background-color: #ff3b30;
+        color: white;
         border: none;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        z-index: 9999; 
+        cursor: pointer;
       }
     </style>
   </head>
   <body>
     
     <model-viewer 
+      id="my-model"
       src="Cupcake_V05.glb" 
       ios-src="Cupcake_V05.usdz" 
       ar 
       ar-scale="auto" 
       ar-modes="webxr scene-viewer quick-look" 
       camera-controls>
-      
-      <button slot="ar-button" class="ar-button">
-        AR로 보기
-      </button>
-
     </model-viewer>
+
+    <button class="force-ar-button" onclick="document.querySelector('#my-model').activateAR()">
+      강제 AR 실행
+    </button>
 
   </body>
 </html>
